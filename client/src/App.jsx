@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 
 function App() {
@@ -108,9 +109,9 @@ function App() {
   return (
     <div className="container">
       <div style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <span style={{ fontSize: '3rem', marginBottom: '1rem' }}>✺</span> {/* Decorative icon similar to Claude's spark */}
-        <h1>Web Scraper</h1>
-        <p className="subtitle">Extract content from any website into a clean text file.</p>
+        <img src="/m51-logo.png" alt="M51 Logo" style={{ width: '80px', height: '80px', marginBottom: '1rem', borderRadius: '8px' }} />
+        <h1>M51's Webscraper</h1>
+        <p className="subtitle">Ekstraher innhold fra hvilken som helst nettside til en pen tekstfil.</p>
       </div>
 
       <div className="input-group">
@@ -140,18 +141,24 @@ function App() {
         </div>
       )}
 
-      {result && (
-        <div className="download-section" style={{ display: 'flex', gap: '1rem' }}>
-          <button className="download-btn" onClick={handleDownload}>
-            Download Content (.txt)
-          </button>
-          {sitemap && (
-            <button className="download-btn" onClick={handleDownloadSitemap} style={{ backgroundColor: '#D97757' }}>
-              Download Sitemap (.xml)
-            </button>
-          )}
-        </div>
-      )}
+      <div className="download-section" style={{ display: 'flex', gap: '1rem' }}>
+        <button
+          className="download-btn"
+          onClick={handleDownload}
+          disabled={!result}
+        >
+          Last ned innhold (.txt)
+        </button>
+        <button
+          className="download-btn secondary"
+          onClick={handleDownloadSitemap}
+          disabled={!sitemap}
+        >
+          Last ned sitemap (.xml)
+        </button>
+      </div>
+
+      <Analytics />
     </div>
   )
 }

@@ -118,21 +118,21 @@ function App() {
         <div className="input-wrapper">
           <input
             type="text"
-            placeholder="Paste a URL to start scraping..."
+            placeholder="Lim inn en URL for å starte skraping..."
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             disabled={isScraping}
             onKeyDown={(e) => e.key === 'Enter' && !isScraping && handleScrape()}
           />
           <button onClick={handleScrape} disabled={isScraping || !url}>
-            {isScraping ? 'Scraping...' : 'Start'}
+            {isScraping ? 'Skraper...' : 'Start'}
           </button>
         </div>
       </div>
 
       {(isScraping || logs.length > 0) && (
         <div className="log-container">
-          {logs.length === 0 && <div className="log-entry" style={{ textAlign: 'center', opacity: 0.5 }}>Waiting for input...</div>}
+          {logs.length === 0 && <div className="log-entry" style={{ textAlign: 'center', opacity: 0.5 }}>Venter på input...</div>}
           {logs.map((log, index) => (
             <div key={index} className={`log-entry ${log.includes('Error') ? 'error' : log.includes('completed') ? 'success' : ''}`}>
               {log}

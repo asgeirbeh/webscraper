@@ -1,17 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
 
 :root {
   /* M51 Brand Palette */
-  --bg-color: #FAF9F6;
-  /* Warm Alabaster */
+  --bg-color: rgb(255, 255, 255);
   --card-bg: #FFFFFF;
-  --primary: #FF5349;
-  /* M51 Coral Red */
-  --primary-hover: #E6483E;
-  --text-main: #2D2D2D;
-  /* Soft Charcoal */
+  --primary: rgb(254, 60, 69);
+  --primary-hover: rgb(230, 50, 60);
+  /* Slightly darker for hover */
+  --text-main: rgb(21, 19, 20);
   --text-muted: #6B6B6B;
-  /* Warm Gray */
   --border: #E5E5E5;
   --input-bg: #FFFFFF;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -19,13 +16,15 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
 
   /* Font Families */
-  --font-serif: 'Merriweather', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Urbanist', sans-serif;
+  /* Using Urbanist for headers too as requested */
+  --font-sans: 'Urbanist', sans-serif;
 }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
+  font-weight: 400;
   background-color: var(--bg-color);
   color: var(--text-main);
   min-height: 100vh;
@@ -59,9 +58,9 @@ body {
 }
 
 h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 700;
   /* Lighter weight for elegance */
   color: var(--text-main);
   margin-bottom: 0.5rem;
@@ -74,7 +73,7 @@ h1 {
   color: var(--text-muted);
   font-size: 1.2rem;
   margin-bottom: 3rem;
-  font-weight: 300;
+  font-weight: 400;
   max-width: 600px;
   line-height: 1.6;
 }
@@ -127,10 +126,10 @@ button {
   border: none;
   padding: 0.8rem 1.2rem;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 400;
   font-family: var(--font-sans);
   background-color: var(--primary);
-  color: white;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: none;
@@ -193,7 +192,7 @@ button:disabled {
 
 .log-entry.success {
   color: #059669;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Download Button Area */
